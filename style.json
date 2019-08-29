@@ -31,7 +31,7 @@
       "url": "https://vecto.teritorio.xyz/data/alti.json?key={key}"
     }
   },
-  "sprite": "https://vecto.teritorio.xyz/styles/teritorio-basic/sprite",
+  "sprite": "https://vecto.teritorio.xyz/styles/teritorio-tourism/sprite",
   "glyphs": "https://vecto.teritorio.xyz/fonts/{fontstack}/{range}.pbf?key={key}",
   "layers": [
     {
