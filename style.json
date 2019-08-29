@@ -1621,7 +1621,12 @@
       "source": "openmaptiles",
       "source-layer": "boundary",
       "minzoom": 11,
-      "filter": ["all", ["==", "admin_level", 8], ["!=", "maritime", 1]],
+      "filter": [
+        "all",
+        ["==", "admin_level", 8],
+        ["!=", "maritime", 1],
+        ["!=", "neutral", 0]
+      ],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#9e9cab",
@@ -1638,7 +1643,8 @@
         "all",
         [">=", "admin_level", 6],
         ["<=", "admin_level", 7],
-        ["!=", "maritime", 1]
+        ["!=", "maritime", 1],
+        ["!=", "neutral", 0]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1657,7 +1663,8 @@
         "all",
         [">=", "admin_level", 3],
         ["<=", "admin_level", 5],
-        ["!=", "maritime", 1]
+        ["!=", "maritime", 1],
+        ["!=", "neutral", 0]
       ],
       "layout": {"line-join": "round", "visibility": "visible"},
       "paint": {
@@ -1675,7 +1682,7 @@
         "all",
         ["==", "admin_level", 2],
         ["!=", "maritime", 1],
-        ["!=", "disputed", 1]
+        ["!=", "neutral", 0]
       ],
       "layout": {
         "line-cap": "round",
