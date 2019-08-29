@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Teritorio Basic",
+  "name": "Teritorio Tourism",
   "metadata": {
     "mapbox:autocomposite": false,
     "mapbox:groups": {
@@ -3650,5 +3650,5 @@
       }
     }
   ],
-  "id": "teritorio-basic"
+  "id": "teritorio-tourism"
 }
