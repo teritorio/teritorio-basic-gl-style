@@ -24,11 +24,11 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3/tiles.json?key={key}"
+      "url": "https://vecto.teritorio.xyz/data/v3.json?key={key}"
     }
   },
-  "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
+  "sprite": "https://vecto.teritorio.xyz/styles/teritorio-basic/sprite",
+  "glyphs": "https://vecto.teritorio.xyz/fonts/{fontstack}/{range}.pbf?key={key}",
   "layers": [
     {
       "id": "background",
