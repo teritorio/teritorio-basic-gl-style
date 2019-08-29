@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Bright",
+  "name": "Teritorio Basic",
   "metadata": {
     "mapbox:autocomposite": false,
     "mapbox:groups": {
@@ -2527,5 +2527,5 @@
       }
     }
   ],
-  "id": "bright"
+  "id": "teritorio-basic"
 }

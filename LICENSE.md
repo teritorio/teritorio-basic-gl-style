@@ -1,3 +1,4 @@
+Copyright (c) 2024, Teritorio & contributors.
 Copyright (c) 2024, MapTiler.com & OpenMapTiles contributors.  
 Copyright (c) 2014, Mapbox.  
 All rights reserved.
