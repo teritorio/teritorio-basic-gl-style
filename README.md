@@ -1,4 +1,4 @@
-# Teritorio Basic Style
+# Teritorio Tourism Style
 
 Derived from [OSM Bright](https://github.com/openmaptiles/osm-bright-gl-style)
 
