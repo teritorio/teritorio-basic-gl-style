@@ -1616,6 +1616,38 @@
       }
     },
     {
+      "id": "boundary-land-level-8",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "minzoom": 11,
+      "filter": ["all", ["==", "admin_level", 8], ["!=", "maritime", 1]],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "#9e9cab",
+        "line-dasharray": [2, 1.5, 1, 1.5],
+        "line-width": 1.5
+      }
+    },
+    {
+      "id": "boundary-land-level-6",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "filter": [
+        "all",
+        [">=", "admin_level", 6],
+        ["<=", "admin_level", 7],
+        ["!=", "maritime", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "#9e9cab",
+        "line-dasharray": [3, 1, 1, 1],
+        "line-width": {"base": 1.4, "stops": [[4, 0.4], [5, 1], [12, 2]]}
+      }
+    },
+    {
       "id": "boundary-land-level-4",
       "type": "line",
       "source": "openmaptiles",
@@ -1624,13 +1656,13 @@
       "filter": [
         "all",
         [">=", "admin_level", 3],
-        ["<=", "admin_level", 8],
+        ["<=", "admin_level", 5],
         ["!=", "maritime", 1]
       ],
       "layout": {"line-join": "round", "visibility": "visible"},
       "paint": {
         "line-color": "#9e9cab",
-        "line-dasharray": [3, 1, 1, 1],
+        "line-dasharray": [3, 1],
         "line-width": {"base": 1.4, "stops": [[4, 0.4], [5, 1], [12, 3]]}
       }
     },
@@ -1654,7 +1686,7 @@
         "line-color": "hsl(248, 7%, 66%)",
         "line-width": {
           "base": 1,
-          "stops": [[0, 0.6], [4, 1.4], [5, 2], [12, 8]]
+          "stops": [[0, 0.6], [4, 1.4], [5, 2], [12, 6]]
         }
       }
     },
