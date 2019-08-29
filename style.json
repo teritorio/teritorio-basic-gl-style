@@ -56,7 +56,15 @@
       "source-layer": "landuse",
       "filter": [
         "all",
-        ["in", "class", "residential", "suburb", "neighbourhood"]
+        [
+          "in",
+          "class",
+          "residential",
+          "suburb",
+          "neighbourhood",
+          "school",
+          "hospital"
+        ]
       ],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -104,24 +112,6 @@
       "source-layer": "landuse",
       "filter": ["==", "class", "cemetery"],
       "paint": {"fill-color": "#e0e4dd"}
-    },
-    {
-      "id": "landuse-hospital",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "landuse",
-      "filter": ["==", "class", "hospital"],
-      "paint": {"fill-color": "#fde"}
-    },
-    {
-      "id": "landuse-school",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "landuse",
-      "filter": ["==", "class", "school"],
-      "paint": {"fill-color": "#f0e8f8"}
     },
     {
       "id": "landuse-railway",
