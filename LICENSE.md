@@ -1,3 +1,4 @@
+Copyright (c) 2019, Teritorio & contributors.
 Copyright (c) 2016, KlokanTech.com & OpenMapTiles contributors.  
 Copyright (c) 2014, Mapbox.  
 All rights reserved.
