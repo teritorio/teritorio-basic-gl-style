@@ -25,6 +25,10 @@
     "openmaptiles": {
       "type": "vector",
       "url": "https://vecto.teritorio.xyz/data/v3.json?key={key}"
+    },
+    "alti": {
+      "type": "raster-dem",
+      "url": "https://vecto.teritorio.xyz/data/alti.json?key={key}"
     }
   },
   "sprite": "https://vecto.teritorio.xyz/styles/teritorio-basic/sprite",
@@ -154,6 +158,15 @@
       "source-layer": "park",
       "filter": ["==", "class", "public_park"],
       "paint": {"fill-color": "#d8e8c8", "fill-opacity": 0.8}
+    },
+    {
+      "id": "alti",
+      "type": "hillshade",
+      "source": "alti",
+      "paint": {
+        "hillshade-accent-color": "rgba(122, 110, 103, 1)",
+        "hillshade-shadow-color": "rgba(176, 145, 91, 1)"
+      }
     },
     {
       "id": "waterway_tunnel",
