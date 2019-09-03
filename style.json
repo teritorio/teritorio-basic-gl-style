@@ -681,7 +681,15 @@
         ["==", "$type", "LineString"],
         ["==", "brunnel", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "pedestrian", "footway", "platform"]
+        [
+          "!in",
+          "subclass",
+          "steps",
+          "pedestrian",
+          "footway",
+          "platform",
+          "cycleway"
+        ]
       ],
       "paint": {
         "line-color": "#cba",
@@ -944,6 +952,25 @@
         "line-color": "#bbb",
         "line-dasharray": [2, 2],
         "line-width": {"base": 1.4, "stops": [[14, 0.4], [15, 0.75], [20, 2]]}
+      }
+    },
+    {
+      "id": "tunnel-cycleway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "cycleway"]
+      ],
+      "paint": {
+        "line-color": "rgba(69, 207, 90, 1)",
+        "line-dasharray": [1.5, 3],
+        "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
     },
     {
@@ -1363,7 +1390,15 @@
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "pedestrian", "footway", "platform"]
+        [
+          "!in",
+          "subclass",
+          "steps",
+          "pedestrian",
+          "footway",
+          "platform",
+          "cycleway"
+        ]
       ],
       "paint": {
         "line-color": "#cba",
@@ -1648,6 +1683,25 @@
       "paint": {
         "line-color": "rgba(232, 185, 122, 1)",
         "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 18]]}
+      }
+    },
+    {
+      "id": "highway-cycleway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "cycleway"]
+      ],
+      "paint": {
+        "line-color": "rgba(69, 207, 90, 1)",
+        "line-dasharray": [1.5, 0.75],
+        "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
     },
     {
@@ -2202,6 +2256,25 @@
         "line-color": "#bbb",
         "line-dasharray": [0.2, 8],
         "line-width": {"base": 1.4, "stops": [[14.5, 0], [15, 3], [20, 8]]}
+      }
+    },
+    {
+      "id": "bridge-cycleway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849334699.1902"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "cycleway"]
+      ],
+      "paint": {
+        "line-color": "rgba(69, 207, 90, 1)",
+        "line-dasharray": [1.5, 0.75],
+        "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
     },
     {
