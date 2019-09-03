@@ -160,6 +160,16 @@
       "paint": {"fill-color": "#d8e8c8", "fill-opacity": 0.8}
     },
     {
+      "id": "landcover-sand",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849382550.77"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "sand"],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(245, 238, 188, 1)", "fill-opacity": 1}
+    },
+    {
       "id": "alti",
       "type": "hillshade",
       "source": "alti",
@@ -342,16 +352,6 @@
         "fill-color": "#fff",
         "fill-opacity": {"base": 1, "stops": [[0, 0.9], [10, 0.3]]}
       }
-    },
-    {
-      "id": "landcover-sand",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849382550.77"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "sand"],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(245, 238, 188, 1)", "fill-opacity": 1}
     },
     {
       "id": "building",
