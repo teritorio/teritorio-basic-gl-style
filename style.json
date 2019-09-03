@@ -354,6 +354,89 @@
       }
     },
     {
+      "id": "park-national-fill",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "national_park"]
+      ],
+      "paint": {
+        "fill-color": "rgba(125, 184, 127, 1)",
+        "fill-opacity": {"stops": [[6, 0.3], [7, 0.3], [8, 0]]}
+      }
+    },
+    {
+      "id": "park-national-outer",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "national_park"]
+      ],
+      "paint": {
+        "line-color": "rgba(125, 184, 127, 1)",
+        "line-width": 3,
+        "line-offset": 0,
+        "line-opacity": {"stops": [[6, 0], [8, 0.5]]}
+      }
+    },
+    {
+      "id": "park-national-inner",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "national_park"]
+      ],
+      "paint": {
+        "line-color": "rgba(125, 184, 127, 0.5)",
+        "line-width": 3,
+        "line-offset": 3,
+        "line-opacity": {"stops": [[8, 0], [9, 0.5]]}
+      }
+    },
+    {
+      "id": "park-reserve-outer",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "protected_area"]
+      ],
+      "paint": {
+        "line-color": "rgba(125, 184, 127, 0.6)",
+        "line-width": 3,
+        "line-offset": 0,
+        "line-opacity": {"stops": [[8, 0], [10, 0.5]]}
+      }
+    },
+    {
+      "id": "park-reserve-inner",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "protected_area"]
+      ],
+      "paint": {
+        "line-color": "rgba(125, 184, 127, 0.3)",
+        "line-width": 3,
+        "line-offset": 3,
+        "line-opacity": {"stops": [[8, 0], [10, 0.5]]}
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849364238.8171"},
@@ -2228,6 +2311,53 @@
       },
       "paint": {
         "text-color": "#333",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "park-reserve-name",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "minzoom": 10,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "protected_area"]
+      ],
+      "layout": {
+        "text-field": "{name:latin}{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 12], [14, 16]]}
+      },
+      "paint": {
+        "text-color": "rgba(108, 159, 110, 1)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "park-national-name",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "minzoom": 8,
+      "maxzoom": 11,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "national_park"],
+        ["<=", "rank", 2]
+      ],
+      "layout": {
+        "text-field": "{name:latin}{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[9, 12], [12, 16]]}
+      },
+      "paint": {
+        "text-color": "rgba(108, 159, 110, 1)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
