@@ -539,7 +539,7 @@
       }
     },
     {
-      "id": "tunnel-link-casing",
+      "id": "tunnel-link-secondary-tertiary-casing",
       "type": "line",
       "metadata": {"mapbox:group": "1444849354174.1904"},
       "source": "openmaptiles",
@@ -547,12 +547,35 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#e9ac77",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        },
+        "line-dasharray": [0.5, 0.25]
+      }
+    },
+    {
+      "id": "tunnel-link-trunk-primary-casing",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "rgba(233, 138, 90, 1)",
         "line-opacity": 1,
         "line-width": {
           "base": 1.2,
@@ -595,11 +618,12 @@
       ],
       "layout": {"line-join": "round"},
       "paint": {
-        "line-color": "#e9ac77",
+        "line-color": "rgba(233, 138, 90, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [[5, 0.4], [6, 0.6], [7, 1.5], [20, 22]]
-        }
+        },
+        "line-dasharray": [0.5, 0.25]
       }
     },
     {
@@ -728,7 +752,7 @@
       }
     },
     {
-      "id": "tunnel-link",
+      "id": "tunnel-link-secondary-tertiary",
       "type": "line",
       "metadata": {"mapbox:group": "1444849354174.1904"},
       "source": "openmaptiles",
@@ -736,12 +760,33 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#fff4c6",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+        }
+      }
+    },
+    {
+      "id": "tunnel-link-trunk-primary",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "rgba(248, 229, 218, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
@@ -794,7 +839,7 @@
       ],
       "layout": {"line-join": "round"},
       "paint": {
-        "line-color": "#fff4c6",
+        "line-color": "rgba(248, 229, 218, 1)",
         "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 18]]}
       }
     },
@@ -1028,7 +1073,7 @@
       }
     },
     {
-      "id": "highway-link-casing",
+      "id": "highway-link-secondary-tertiary-casing",
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
       "source": "openmaptiles",
@@ -1037,7 +1082,7 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {
@@ -1047,6 +1092,33 @@
       },
       "paint": {
         "line-color": "#e9ac77",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        }
+      }
+    },
+    {
+      "id": "highway-link-trunk-primary-casing",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(233, 138, 90, 1)",
         "line-opacity": 1,
         "line-width": {
           "base": 1.2,
@@ -1118,7 +1190,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#e9ac77",
+        "line-color": "rgba(233, 138, 90, 1)",
         "line-opacity": {"stops": [[7, 0], [8, 1]]},
         "line-width": {
           "base": 1.2,
@@ -1145,7 +1217,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#e9ac77",
+        "line-color": "rgba(233, 138, 90, 1)",
         "line-opacity": {"stops": [[5, 0], [6, 1]]},
         "line-width": {
           "base": 1.2,
@@ -1245,7 +1317,7 @@
       }
     },
     {
-      "id": "highway-link",
+      "id": "highway-link-secondary-tertiary",
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
       "source": "openmaptiles",
@@ -1254,7 +1326,7 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {
@@ -1264,6 +1336,32 @@
       },
       "paint": {
         "line-color": "#fea",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+        }
+      }
+    },
+    {
+      "id": "highway-link-trunk-primary",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(255, 202, 170, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
@@ -1330,7 +1428,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fea",
+        "line-color": "rgba(255, 202, 170, 1)",
         "line-width": {"base": 1.2, "stops": [[8.5, 0], [9, 0.5], [20, 18]]}
       }
     },
@@ -1353,7 +1451,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fea",
+        "line-color": "rgba(255, 202, 170, 1)",
         "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 18]]}
       }
     },
@@ -1514,7 +1612,7 @@
       }
     },
     {
-      "id": "bridge-link-casing",
+      "id": "bridge-link-secondary-tertiary-casing",
       "type": "line",
       "metadata": {"mapbox:group": "1444849334699.1902"},
       "source": "openmaptiles",
@@ -1522,12 +1620,34 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#e9ac77",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 19]]
+        }
+      }
+    },
+    {
+      "id": "bridge-link-trunk-primary-casing",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849334699.1902"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "bridge"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "rgba(235, 145, 107, 1)",
         "line-opacity": 1,
         "line-width": {
           "base": 1.2,
@@ -1571,7 +1691,7 @@
       ],
       "layout": {"line-join": "round"},
       "paint": {
-        "line-color": "hsl(28, 76%, 67%)",
+        "line-color": "rgba(235, 145, 107, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [[5, 0.4], [6, 0.6], [7, 1.5], [20, 26]]
@@ -1702,7 +1822,7 @@
       }
     },
     {
-      "id": "bridge-link",
+      "id": "bridge-link-secondary-tertiary",
       "type": "line",
       "metadata": {"mapbox:group": "1444849334699.1902"},
       "source": "openmaptiles",
@@ -1710,12 +1830,33 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["in", "class", "secondary", "tertiary"],
         ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#fea",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+        }
+      }
+    },
+    {
+      "id": "bridge-link-trunk-primary",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849334699.1902"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "bridge"],
+        ["in", "class", "trunk", "primary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "rgba(255, 202, 170, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
@@ -1773,7 +1914,7 @@
       ],
       "layout": {"line-join": "round"},
       "paint": {
-        "line-color": "#fea",
+        "line-color": "rgba(255, 202, 170, 1)",
         "line-width": {"base": 1.2, "stops": [[6.5, 0], [7, 0.5], [20, 18]]}
       }
     },
