@@ -186,7 +186,7 @@
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "sand"]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(245, 238, 188, 1)", "fill-opacity": 1}
+      "paint": {"fill-color": "#fceeb8", "fill-opacity": 1}
     },
     {
       "id": "alti",
