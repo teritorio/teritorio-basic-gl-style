@@ -1861,12 +1861,82 @@
         "all",
         ["==", "$type", "LineString"],
         ["==", "brunnel", "bridge"],
-        ["==", "class", "path"]
+        ["==", "class", "path"],
+        ["!in", "subclass", "steps", "pedestrian", "footway"]
       ],
       "paint": {
         "line-color": "#cba",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
+      }
+    },
+    {
+      "id": "bridge-path-pedestrian",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "pedestrian"]
+      ],
+      "layout": {"line-join": "round", "line-cap": "butt"},
+      "paint": {
+        "line-color": "#fff",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
+      }
+    },
+    {
+      "id": "bridge-path-steps",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "steps"]
+      ],
+      "layout": {"line-join": "round", "line-cap": "butt"},
+      "paint": {
+        "line-color": "#fff",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        },
+        "line-dasharray": [0.5, 0.25]
+      }
+    },
+    {
+      "id": "bridge-path-footway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
       }
     },
     {
