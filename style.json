@@ -682,7 +682,7 @@
         ["==", "$type", "LineString"],
         ["==", "brunnel", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "pedestrian", "footway"]
+        ["!in", "subclass", "steps", "pedestrian", "footway", "platform"]
       ],
       "paint": {
         "line-color": "#cba",
@@ -778,6 +778,33 @@
           "base": 1.2,
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
         }
+      }
+    },
+    {
+      "id": "tunnel-path-platform",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "platform"]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        },
+        "line-dasharray": [1.5, 0.25]
       }
     },
     {
@@ -1310,7 +1337,7 @@
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "pedestrian", "footway"]
+        ["!in", "subclass", "steps", "pedestrian", "footway", "platform"]
       ],
       "paint": {
         "line-color": "#cba",
@@ -1381,6 +1408,32 @@
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
         "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
+      }
+    },
+    {
+      "id": "highway-path-platform",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "platform"]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
         "line-width": {
           "base": 1.2,
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
@@ -1933,6 +1986,32 @@
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
         "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
+      }
+    },
+    {
+      "id": "bridge-path-platform",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "platform"]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
         "line-width": {
           "base": 1.2,
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
