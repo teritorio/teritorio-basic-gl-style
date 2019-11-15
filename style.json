@@ -128,6 +128,24 @@
       "paint": {"fill-color": "hsla(30, 19%, 90%, 0.4)"}
     },
     {
+      "id": "landuse-parking",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "parking"]],
+      "paint": {"fill-color": "hsla(30, 19%, 90%, 0.4)"}
+    },
+    {
+      "id": "landuse-camping",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["all", ["==", "class", "camp_site"]],
+      "paint": {"fill-color": "rgba(233, 251, 206, 1)"}
+    },
+    {
       "id": "landcover-wood",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
