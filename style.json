@@ -2868,6 +2868,54 @@
       }
     },
     {
+      "id": "park-reserve-name-small",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "minzoom": 10,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "protected_area"],
+        [">", "rank", 1]
+      ],
+      "layout": {
+        "text-field": "{name:latin}{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 9], [12, 16]]}
+      },
+      "paint": {
+        "text-color": "rgba(85, 126, 88, 1)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.8
+      }
+    },
+    {
+      "id": "park-reserve-name",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "minzoom": 8,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["==", "class", "protected_area"],
+        ["<=", "rank", 1]
+      ],
+      "layout": {
+        "text-field": "{name:latin}{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[8, 9], [12, 16]]}
+      },
+      "paint": {
+        "text-color": "rgba(85, 126, 88, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0.8)",
+        "text-halo-width": 1.8
+      }
+    },
+    {
       "id": "place-village",
       "type": "symbol",
       "metadata": {"mapbox:group": "1444849242106.713"},
@@ -2888,49 +2936,6 @@
       }
     },
     {
-      "id": "place-town",
-      "type": "symbol",
-      "metadata": {"mapbox:group": "1444849242106.713"},
-      "source": "openmaptiles",
-      "source-layer": "place",
-      "filter": ["==", "class", "town"],
-      "layout": {
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-max-width": 8,
-        "text-size": {"base": 1.2, "stops": [[10, 14], [15, 24]]},
-        "visibility": "visible"
-      },
-      "paint": {
-        "text-color": "#333",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
-      }
-    },
-    {
-      "id": "park-reserve-name",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "park",
-      "minzoom": 10,
-      "maxzoom": 14,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["==", "class", "protected_area"]
-      ],
-      "layout": {
-        "text-field": "{name:latin}{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[10, 12], [14, 16]]}
-      },
-      "paint": {
-        "text-color": "rgba(108, 159, 110, 1)",
-        "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.2
-      }
-    },
-    {
       "id": "park-national-name",
       "type": "symbol",
       "source": "openmaptiles",
@@ -2946,10 +2951,30 @@
       "layout": {
         "text-field": "{name:latin}{name:nonlatin}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[9, 12], [12, 16]]}
+        "text-size": {"stops": [[8, 9], [12, 16]]}
       },
       "paint": {
-        "text-color": "rgba(108, 159, 110, 1)",
+        "text-color": "rgba(85, 126, 88, 1)",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.8
+      }
+    },
+    {
+      "id": "place-town",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "filter": ["==", "class", "town"],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 8,
+        "text-size": {"base": 1.2, "stops": [[10, 14], [15, 24]]},
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
