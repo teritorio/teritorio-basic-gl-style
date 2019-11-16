@@ -390,86 +390,55 @@
       }
     },
     {
-      "id": "park-national-fill",
+      "id": "park-fill",
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "park",
       "filter": [
         "all",
         ["==", "$type", "Polygon"],
-        ["==", "class", "national_park"]
+        ["in", "class", "national_park", "protected_area"]
       ],
       "paint": {
         "fill-color": "rgba(125, 184, 127, 1)",
-        "fill-opacity": {"stops": [[6, 0.3], [7, 0.3], [8, 0]]}
+        "fill-opacity": {"stops": [[6, 0], [7, 0.3], [9, 0]]}
       }
     },
     {
-      "id": "park-national-outer",
+      "id": "park-outer",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "park",
+      "minzoom": 7,
       "filter": [
         "all",
         ["==", "$type", "Polygon"],
-        ["==", "class", "national_park"]
+        ["in", "class", "national_park", "protected_area"]
       ],
+      "layout": {"line-join": "bevel"},
       "paint": {
         "line-color": "rgba(125, 184, 127, 1)",
-        "line-width": 3,
+        "line-width": {"stops": [[7, 3], [13, 6]]},
         "line-offset": 0,
-        "line-opacity": {"stops": [[6, 0], [8, 0.5]]}
+        "line-opacity": {"stops": [[7, 0], [7.5, 0.5]]}
       }
     },
     {
-      "id": "park-national-inner",
+      "id": "park-inner",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "park",
+      "minzoom": 7,
       "filter": [
         "all",
         ["==", "$type", "Polygon"],
-        ["==", "class", "national_park"]
+        ["in", "class", "national_park", "protected_area"]
       ],
       "paint": {
-        "line-color": "rgba(125, 184, 127, 0.5)",
-        "line-width": 3,
-        "line-offset": 3,
-        "line-opacity": {"stops": [[8, 0], [9, 0.5]]}
-      }
-    },
-    {
-      "id": "park-reserve-outer",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "park",
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["==", "class", "protected_area"]
-      ],
-      "paint": {
-        "line-color": "rgba(125, 184, 127, 0.6)",
-        "line-width": 3,
-        "line-offset": 0,
-        "line-opacity": {"stops": [[8, 0], [10, 0.5]]}
-      }
-    },
-    {
-      "id": "park-reserve-inner",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "park",
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["==", "class", "protected_area"]
-      ],
-      "paint": {
-        "line-color": "rgba(125, 184, 127, 0.3)",
-        "line-width": 3,
-        "line-offset": 3,
-        "line-opacity": {"stops": [[8, 0], [10, 0.5]]}
+        "line-color": "rgba(125, 184, 127,1)",
+        "line-width": {"stops": [[7, 3], [13, 6]]},
+        "line-offset": {"stops": [[7, 3], [13, 6]]},
+        "line-opacity": {"stops": [[7.5, 0], [8, 0.25]]}
       }
     },
     {
