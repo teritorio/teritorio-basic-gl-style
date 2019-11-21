@@ -146,6 +146,19 @@
       "paint": {"fill-color": "rgba(233, 251, 206, 1)"}
     },
     {
+      "id": "landuse-sports_centre",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["==", "class", "sports_centre"]
+      ],
+      "paint": {"fill-color": "rgba(236, 255, 224, 0.7)"}
+    },
+    {
       "id": "landcover-wood",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
