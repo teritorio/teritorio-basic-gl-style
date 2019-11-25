@@ -2872,7 +2872,7 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "park",
-      "minzoom": 10,
+      "minzoom": 8,
       "maxzoom": 14,
       "filter": [
         "all",
@@ -2883,12 +2883,13 @@
       "layout": {
         "text-field": "{name:latin}{name:nonlatin}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[10, 9], [12, 16]]}
+        "text-size": {"stops": [[8, 9], [12, 16]]}
       },
       "paint": {
         "text-color": "rgba(85, 126, 88, 1)",
         "text-halo-color": "rgba(255,255,255,0.8)",
-        "text-halo-width": 1.8
+        "text-halo-width": 1.8,
+        "text-opacity": {"stops": [[8, 0], [8.5, 1]]}
       }
     },
     {
@@ -2896,7 +2897,7 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "park",
-      "minzoom": 8,
+      "minzoom": 6,
       "maxzoom": 14,
       "filter": [
         "all",
@@ -2907,12 +2908,13 @@
       "layout": {
         "text-field": "{name:latin}{name:nonlatin}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[8, 9], [12, 16]]}
+        "text-size": {"stops": [[6, 9], [12, 16]]}
       },
       "paint": {
         "text-color": "rgba(85, 126, 88, 1)",
         "text-halo-color": "rgba(255, 255, 255, 0.8)",
-        "text-halo-width": 1.8
+        "text-halo-width": 1.8,
+        "text-opacity": {"stops": [[6, 0], [6.5, 1]]}
       }
     },
     {
