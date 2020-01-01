@@ -2878,98 +2878,6 @@
       "paint": {"icon-opacity": 0.5}
     },
     {
-      "id": "poi-level-3",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        [">=", "rank", 25],
-        ["any", ["!has", "level"], ["==", "level", 0]]
-      ],
-      "layout": {
-        "icon-image": "{class}_11",
-        "text-anchor": "top",
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-max-width": 9,
-        "text-offset": [0, 0.6],
-        "text-padding": 2,
-        "text-size": 12,
-        "visibility": "visible"
-      },
-      "paint": {
-        "text-color": "#666",
-        "text-halo-blur": 0.5,
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "poi-level-2",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["<=", "rank", 24],
-        [">=", "rank", 15],
-        ["any", ["!has", "level"], ["==", "level", 0]]
-      ],
-      "layout": {
-        "icon-image": "{class}_11",
-        "text-anchor": "top",
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-max-width": 9,
-        "text-offset": [0, 0.6],
-        "text-padding": 2,
-        "text-size": 12,
-        "visibility": "visible"
-      },
-      "paint": {
-        "text-color": "#666",
-        "text-halo-blur": 0.5,
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "poi-level-1",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", "$type", "Point"],
-        ["<=", "rank", 14],
-        ["has", "name"],
-        ["any", ["!has", "level"], ["==", "level", 0]]
-      ],
-      "layout": {
-        "icon-image": "{class}_11",
-        "text-anchor": "top",
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-max-width": 9,
-        "text-offset": [0, 0.6],
-        "text-padding": 2,
-        "text-size": 12,
-        "visibility": "visible"
-      },
-      "paint": {
-        "text-color": "#666",
-        "text-halo-blur": 0.5,
-        "text-halo-color": "#ffffff",
-        "text-halo-width": 1
-      }
-    },
-    {
       "id": "highway-name-path",
       "type": "symbol",
       "source": "openmaptiles",
@@ -3292,6 +3200,413 @@
       },
       "paint": {
         "text-color": "#666",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi-level-3-icon",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        [">=", ["get", "rank"], 25],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ]
+      }
+    },
+    {
+      "id": "poi-level-3",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        [">=", ["get", "rank"], 25],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true,
+        "text-allow-overlap": false
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "superclass"],
+            "local_products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "local_services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity_local",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi-level-2-icon",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "rank"], 24],
+        [">=", ["get", "rank"], 15],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ]
+      }
+    },
+    {
+      "id": "poi-level-2",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "rank"], 24],
+        [">=", ["get", "rank"], 15],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "superclass"],
+            "local_products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "local_services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity_local",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi-level-1-icon",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "rank"], 14],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["has", "name"],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ]
+      }
+    },
+    {
+      "id": "poi-level-1",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "rank"], 14],
+        ["<=", ["get", "zoom"], ["zoom"]],
+        ["has", "name"],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+      ],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              "-",
+              ["get", "subclass"],
+              ["get", "style"]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              ["get", "superclass"],
+              "-",
+              ["get", "class"],
+              ["get", "style"]
+            ]
+          ],
+          ["image", ["concat", ["get", "superclass"], ["get", "style"]]]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "superclass"],
+            "local_products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "local_services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity_local",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
         "text-halo-blur": 0.5,
         "text-halo-color": "#ffffff",
         "text-halo-width": 1
