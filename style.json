@@ -2916,6 +2916,9 @@
         "city",
         "town",
         "village",
+        "hamlet",
+        "suburb",
+        "neighbourhood",
         "state",
         "country",
         "continent"
@@ -2983,6 +2986,26 @@
         "text-halo-color": "rgba(255, 255, 255, 0.8)",
         "text-halo-width": 1.8,
         "text-opacity": {"stops": [[6, 0], [6.5, 1]]}
+      }
+    },
+    {
+      "id": "place-hamlet",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "filter": ["in", "class", "hamlet", "suburb", "neighbourhood"],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 8,
+        "text-size": {"base": 1.2, "stops": [[11, 8], [15, 17]]},
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
       }
     },
     {
