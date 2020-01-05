@@ -159,6 +159,19 @@
       "paint": {"fill-color": "rgba(236, 255, 224, 0.7)"}
     },
     {
+      "id": "landuse-pitch_playground",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["in", "class", "pitch", "playground"]
+      ],
+      "paint": {"fill-color": "rgba(207, 242, 190, 0.7)"}
+    },
+    {
       "id": "landcover-wood",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
