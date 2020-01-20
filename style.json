@@ -53,6 +53,71 @@
       }
     },
     {
+      "id": "landcover-wood",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "wood"],
+      "paint": {
+        "fill-antialias": {"base": 1, "stops": [[0, false], [9, true]]},
+        "fill-color": "#d8e8c8"
+      }
+    },
+    {
+      "id": "landcover-wetland",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["all", ["==", "class", "wetland"]],
+      "paint": {
+        "fill-pattern": {
+          "stops": [
+            [11, "wetland8"],
+            [12, "wetland16"],
+            [13, "wetland32"],
+            [14, "wetland64"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "landcover-grass",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "grass"],
+      "paint": {
+        "fill-color": "rgba(224, 241, 191, 1)",
+        "fill-outline-color": "hsla(0, 0%, 0%, 0.03)"
+      }
+    },
+    {
+      "id": "landcover-grass-park",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "filter": ["==", "class", "public_park"],
+      "paint": {
+        "fill-color": "#6a4",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "hsla(0, 0%, 0%, 0.03)"
+      }
+    },
+    {
+      "id": "landcover-sand",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849382550.77"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["all", ["==", "class", "sand"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-pattern": "beach"}
+    },
+    {
       "id": "landuse-residential",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
@@ -170,71 +235,6 @@
         ["in", "class", "pitch", "playground"]
       ],
       "paint": {"fill-color": "rgba(207, 242, 190, 0.7)"}
-    },
-    {
-      "id": "landcover-wood",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "wood"],
-      "paint": {
-        "fill-antialias": {"base": 1, "stops": [[0, false], [9, true]]},
-        "fill-color": "#d8e8c8"
-      }
-    },
-    {
-      "id": "landcover-wetland",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["all", ["==", "class", "wetland"]],
-      "paint": {
-        "fill-pattern": {
-          "stops": [
-            [11, "wetland8"],
-            [12, "wetland16"],
-            [13, "wetland32"],
-            [14, "wetland64"]
-          ]
-        }
-      }
-    },
-    {
-      "id": "landcover-grass",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "grass"],
-      "paint": {
-        "fill-color": "rgba(224, 241, 191, 1)",
-        "fill-outline-color": "hsla(0, 0%, 0%, 0.03)"
-      }
-    },
-    {
-      "id": "landcover-grass-park",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849388993.3071"},
-      "source": "openmaptiles",
-      "source-layer": "park",
-      "filter": ["==", "class", "public_park"],
-      "paint": {
-        "fill-color": "#6a4",
-        "fill-opacity": 0.2,
-        "fill-outline-color": "hsla(0, 0%, 0%, 0.03)"
-      }
-    },
-    {
-      "id": "landcover-sand",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849382550.77"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["all", ["==", "class", "sand"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-pattern": "beach"}
     },
     {
       "id": "alti",
