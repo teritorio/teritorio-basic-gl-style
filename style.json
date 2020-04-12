@@ -2917,6 +2917,7 @@
         "town",
         "village",
         "hamlet",
+        "square",
         "suburb",
         "neighbourhood",
         "state",
@@ -2986,6 +2987,27 @@
         "text-halo-color": "rgba(255, 255, 255, 0.8)",
         "text-halo-width": 1.8,
         "text-opacity": {"stops": [[6, 0], [6.5, 1]]}
+      }
+    },
+    {
+      "id": "place-square",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 16,
+      "filter": ["all", ["in", "class", "square"]],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-rotation-alignment": "map",
+        "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]},
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-color": "#765",
+        "text-halo-blur": 0.5,
+        "text-halo-width": 1
       }
     },
     {
