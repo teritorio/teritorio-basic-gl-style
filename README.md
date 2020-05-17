@@ -2,7 +2,7 @@
 
 Derived from [OSM Bright](https://github.com/openmaptiles/osm-bright-gl-style)
 
-A GL JS basemap style showcasing OpenStreetMap. It is using the vector tile schema of [OpenMapTiles](https://github.com/openmaptiles/openmaptiles).
+A GL JS basemap style showcasing OpenStreetMap tourism data. It is using the vector tile schema of [OpenMapTiles](https://github.com/openmaptiles/openmaptiles).
 
 ## Preview
 
@@ -19,3 +19,7 @@ After you've started Maputnik open the editor on `localhost:8000`.
 ```
 maputnik --watch --file style.json
 ```
+
+## Depencency
+
+This style require at least the Mapbox GL JS version 1.10.1.
