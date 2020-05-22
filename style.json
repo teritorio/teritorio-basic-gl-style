@@ -2929,6 +2929,26 @@
       }
     },
     {
+      "id": "building-3d",
+      "type": "fill-extrusion",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "filter": ["all", ["!has", "hide_3d"]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-extrusion-color": "#f2eae2",
+        "fill-extrusion-height": {
+          "property": "render_height",
+          "type": "identity"
+        },
+        "fill-extrusion-base": {
+          "property": "render_min_height",
+          "type": "identity"
+        },
+        "fill-extrusion-opacity": 0.6
+      }
+    },
+    {
       "id": "place-other",
       "type": "symbol",
       "metadata": {"mapbox:group": "1444849242106.713"},
