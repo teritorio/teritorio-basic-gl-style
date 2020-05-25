@@ -2947,6 +2947,29 @@
       }
     },
     {
+      "id": "place-locality",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 14,
+      "filter": ["all", ["in", "class", "locality"]],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-letter-spacing": 0.1,
+        "text-max-width": 9,
+        "text-size": {"base": 1.2, "stops": [[12, 6], [15, 10]]},
+        "text-transform": "none",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#633",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
       "id": "place-other",
       "type": "symbol",
       "metadata": {"mapbox:group": "1444849242106.713"},
@@ -2959,6 +2982,7 @@
         "town",
         "village",
         "hamlet",
+        "locality",
         "square",
         "suburb",
         "neighbourhood",
