@@ -2990,7 +2990,8 @@
         "neighbourhood",
         "state",
         "country",
-        "continent"
+        "continent",
+        "forest"
       ],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
@@ -3003,6 +3004,25 @@
       },
       "paint": {
         "text-color": "#633",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "place-forest",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "filter": ["all", ["in", "class", "forest"]],
+      "layout": {
+        "text-field": "{name:latin}{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[8, 9], [12, 16]]},
+        "text-max-width": 7
+      },
+      "paint": {
+        "text-color": "rgba(85, 126, 88, 1)",
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 1.2
       }
