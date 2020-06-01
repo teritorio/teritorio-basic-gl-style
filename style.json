@@ -2974,6 +2974,27 @@
       }
     },
     {
+      "id": "place-square",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 16,
+      "filter": ["all", ["in", "class", "square"]],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-rotation-alignment": "map",
+        "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]},
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-color": "#765",
+        "text-halo-blur": 0.5,
+        "text-halo-width": 1
+      }
+    },
+    {
       "id": "place-other",
       "type": "symbol",
       "metadata": {"mapbox:group": "1444849242106.713"},
@@ -2990,6 +3011,7 @@
         "square",
         "suburb",
         "neighbourhood",
+        "isolated_dwelling",
         "state",
         "country",
         "continent",
@@ -3002,6 +3024,29 @@
         "text-max-width": 9,
         "text-size": {"base": 1.2, "stops": [[12, 10], [15, 14]]},
         "text-transform": "uppercase",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#633",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "place-isolated_dwelling",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849242106.713"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 13.5,
+      "filter": ["all", ["in", "class", "isolated_dwelling"]],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Bold"],
+        "text-letter-spacing": 0.1,
+        "text-max-width": 9,
+        "text-size": {"base": 1, "stops": [[14, 9], [15, 14]]},
+        "text-transform": "none",
         "visibility": "visible"
       },
       "paint": {
@@ -3106,27 +3151,6 @@
         "text-halo-color": "rgba(255, 255, 255, 0.8)",
         "text-halo-width": 1.8,
         "text-opacity": {"stops": [[6, 0], [6.5, 1]]}
-      }
-    },
-    {
-      "id": "place-square",
-      "type": "symbol",
-      "metadata": {"mapbox:group": "1444849242106.713"},
-      "source": "openmaptiles",
-      "source-layer": "place",
-      "minzoom": 16,
-      "filter": ["all", ["in", "class", "square"]],
-      "layout": {
-        "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
-        "text-rotation-alignment": "map",
-        "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]},
-        "text-max-width": 8
-      },
-      "paint": {
-        "text-color": "#765",
-        "text-halo-blur": 0.5,
-        "text-halo-width": 1
       }
     },
     {
