@@ -2815,6 +2815,341 @@
       }
     },
     {
+      "id": "poi-level-3-picto",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        [">=", ["get", "tourism_rank"], 25],
+        ["<=", ["get", "tourism_zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["==", ["var", "style"], "•"]
+          ]
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "let",
+          "style",
+          ["get", "tourism_style"],
+          [
+            "coalesce",
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                "-",
+                ["get", "tourism_subclass"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
+            ]
+          ]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true,
+        "text-allow-overlap": false
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "tourism_style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "tourism_superclass"],
+            "products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi-level-2-picto",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "tourism_rank"], 24],
+        [">=", ["get", "tourism_rank"], 15],
+        ["<=", ["get", "tourism_zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["==", ["var", "style"], "•"]
+          ]
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "let",
+          "style",
+          ["get", "tourism_style"],
+          [
+            "coalesce",
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                "-",
+                ["get", "tourism_subclass"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
+            ]
+          ]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "tourism_style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "tourism_superclass"],
+            "products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi-level-1-picto",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        ["<=", ["get", "tourism_rank"], 14],
+        ["<=", ["get", "tourism_zoom"], ["zoom"]],
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["==", ["var", "style"], "•"]
+          ]
+        ]
+      ],
+      "layout": {
+        "icon-image": [
+          "let",
+          "style",
+          ["get", "tourism_style"],
+          [
+            "coalesce",
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                "-",
+                ["get", "tourism_subclass"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              [
+                "concat",
+                ["get", "tourism_superclass"],
+                "-",
+                ["get", "tourism_class"],
+                ["var", "style"]
+              ]
+            ],
+            [
+              "image",
+              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
+            ]
+          ]
+        ],
+        "text-anchor": "top",
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 9,
+        "text-offset": [0, 1],
+        "text-padding": 2,
+        "text-size": 12,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": [
+          "match",
+          ["get", "tourism_style"],
+          "•",
+          "#666",
+          [
+            "match",
+            ["get", "tourism_superclass"],
+            "products",
+            "#F25C05",
+            "convenience",
+            "#00a0c4",
+            "services",
+            "#2d4a9a",
+            "safety",
+            "#e42224",
+            "mobility",
+            "#3772a6",
+            "amenity",
+            "#0a86a5",
+            "remarkable",
+            "#e50980",
+            "culture",
+            "#76009e",
+            "hosting",
+            "#a01561",
+            "catering",
+            "#f09007",
+            "leisure",
+            "#00a19a",
+            "public_landmark",
+            "#4D308C",
+            "shopping",
+            "#808080",
+            "#666"
+          ]
+        ],
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
       "id": "road_oneway",
       "type": "symbol",
       "source": "openmaptiles",
@@ -3217,7 +3552,18 @@
         ["==", ["geometry-type"], "Point"],
         [">=", ["get", "tourism_rank"], 25],
         ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["!=", ["var", "style"], "•"]
+          ]
+        ]
       ],
       "layout": {
         "icon-image": [
@@ -3319,7 +3665,18 @@
         ["<=", ["get", "tourism_rank"], 24],
         [">=", ["get", "tourism_rank"], 15],
         ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["!=", ["var", "style"], "•"]
+          ]
+        ]
       ],
       "layout": {
         "icon-image": [
@@ -3419,7 +3776,18 @@
         ["==", ["geometry-type"], "Point"],
         ["<=", ["get", "tourism_rank"], 14],
         ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
+        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]],
+        [
+          "let",
+          "_bloc_name",
+          "styleFilter",
+          [
+            "let",
+            "style",
+            ["get", "tourism_style"],
+            ["!=", ["var", "style"], "•"]
+          ]
+        ]
       ],
       "layout": {
         "icon-image": [
