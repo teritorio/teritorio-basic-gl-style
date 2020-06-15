@@ -3207,56 +3207,6 @@
       }
     },
     {
-      "id": "poi-level-3-icon",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", ["geometry-type"], "Point"],
-        [">=", ["get", "tourism_rank"], 25],
-        ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
-      ],
-      "layout": {
-        "icon-image": [
-          "let",
-          "style",
-          ["get", "tourism_style"],
-          [
-            "coalesce",
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                "-",
-                ["get", "tourism_subclass"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
-            ]
-          ]
-        ]
-      }
-    },
-    {
       "id": "poi-level-3",
       "type": "symbol",
       "source": "openmaptiles",
@@ -3358,57 +3308,6 @@
       }
     },
     {
-      "id": "poi-level-2-icon",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 14,
-      "filter": [
-        "all",
-        ["==", ["geometry-type"], "Point"],
-        ["<=", ["get", "tourism_rank"], 24],
-        [">=", ["get", "tourism_rank"], 15],
-        ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
-      ],
-      "layout": {
-        "icon-image": [
-          "let",
-          "style",
-          ["get", "tourism_style"],
-          [
-            "coalesce",
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                "-",
-                ["get", "tourism_subclass"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
-            ]
-          ]
-        ]
-      }
-    },
-    {
       "id": "poi-level-2",
       "type": "symbol",
       "source": "openmaptiles",
@@ -3507,56 +3406,6 @@
         "text-halo-blur": 0.5,
         "text-halo-color": "#ffffff",
         "text-halo-width": 1
-      }
-    },
-    {
-      "id": "poi-level-1-icon",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        ["==", ["geometry-type"], "Point"],
-        ["<=", ["get", "tourism_rank"], 14],
-        ["<=", ["get", "tourism_zoom"], ["zoom"]],
-        ["any", ["!", ["has", "level"]], ["==", ["get", "level"], 0]]
-      ],
-      "layout": {
-        "icon-image": [
-          "let",
-          "style",
-          ["get", "tourism_style"],
-          [
-            "coalesce",
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                "-",
-                ["get", "tourism_subclass"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              [
-                "concat",
-                ["get", "tourism_superclass"],
-                "-",
-                ["get", "tourism_class"],
-                ["var", "style"]
-              ]
-            ],
-            [
-              "image",
-              ["concat", ["get", "tourism_superclass"], ["var", "style"]]
-            ]
-          ]
-        ]
       }
     },
     {
