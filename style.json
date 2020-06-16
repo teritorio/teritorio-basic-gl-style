@@ -703,8 +703,7 @@
         "all",
         ["==", "$type", "LineString"],
         ["==", "brunnel", "tunnel"],
-        ["==", "class", "path"],
-        ["in", "subclass", "steps", "pedestrian", "footway"]
+        ["==", "class", "path"]
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
@@ -766,6 +765,28 @@
       }
     },
     {
+      "id": "tunnel-path-footway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
+      }
+    },
+    {
       "id": "tunnel-path-pedestrian",
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
@@ -810,28 +831,6 @@
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
         },
         "line-dasharray": [0.5, 0.25]
-      }
-    },
-    {
-      "id": "tunnel-path-footway",
-      "type": "line",
-      "metadata": {"mapbox:group": "1444849345966.4436"},
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "brunnel", "tunnel"],
-        ["==", "class", "path"],
-        ["==", "subclass", "footway"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
       }
     },
     {
@@ -1207,7 +1206,7 @@
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
         ["==", "class", "path"],
-        ["in", "subclass", "pedestrian", "footway"]
+        ["!in", "subclass", "steps"]
       ],
       "layout": {
         "line-cap": "round",
@@ -1454,6 +1453,28 @@
       }
     },
     {
+      "id": "highway-path-footway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {"line-cap": "round", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
+      }
+    },
+    {
       "id": "highway-path-pedestrian",
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
@@ -1498,28 +1519,6 @@
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
         },
         "line-dasharray": [0.5, 0.25]
-      }
-    },
-    {
-      "id": "highway-path-footway",
-      "type": "line",
-      "metadata": {"mapbox:group": "1444849345966.4436"},
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "class", "path"],
-        ["==", "subclass", "footway"]
-      ],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
       }
     },
     {
@@ -2027,7 +2026,7 @@
         ["==", "class", "path"]
       ],
       "paint": {
-        "line-color": "#f8f4f0",
+        "line-color": "#cfcdca",
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 18]]}
       }
     },
@@ -2042,12 +2041,42 @@
         ["==", "$type", "LineString"],
         ["==", "brunnel", "bridge"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "pedestrian", "footway"]
+        [
+          "!in",
+          "subclass",
+          "steps",
+          "pedestrian",
+          "footway",
+          "platform",
+          "cycleway"
+        ]
       ],
       "paint": {
         "line-color": "#cba",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
+      }
+    },
+    {
+      "id": "bridge-path-footway",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(227, 227, 227, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
+        }
       }
     },
     {
@@ -2095,28 +2124,6 @@
           "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
         },
         "line-dasharray": [0.5, 0.25]
-      }
-    },
-    {
-      "id": "bridge-path-footway",
-      "type": "line",
-      "metadata": {"mapbox:group": "1444849345966.4436"},
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "LineString"],
-        ["==", "brunnel", "bridge"],
-        ["==", "class", "path"],
-        ["==", "subclass", "footway"]
-      ],
-      "layout": {"line-cap": "butt", "line-join": "round"},
-      "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
       }
     },
     {
