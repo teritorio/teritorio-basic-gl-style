@@ -1013,7 +1013,7 @@
         ["==", "subclass", "cycleway"]
       ],
       "paint": {
-        "line-color": "rgba(69, 207, 90, 1)",
+        "line-color": "rgba(55,114,166, 1)",
         "line-dasharray": [1.5, 3],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
@@ -1744,7 +1744,7 @@
         ["==", "subclass", "cycleway"]
       ],
       "paint": {
-        "line-color": "rgba(69, 207, 90, 1)",
+        "line-color": "rgba(55,114,166, 1)",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
@@ -2325,7 +2325,7 @@
         ["==", "subclass", "cycleway"]
       ],
       "paint": {
-        "line-color": "rgba(69, 207, 90, 1)",
+        "line-color": "rgba(55,114,166, 1)",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
       }
@@ -2339,7 +2339,7 @@
       "filter": ["all", ["in", "bicycle_network", 1, 2]],
       "layout": {"line-join": "round", "line-cap": "round"},
       "paint": {
-        "line-color": "rgba(26, 63, 26, 1)",
+        "line-color": "rgba(29, 60, 88, 1)",
         "line-width": {"base": 1.2, "stops": [[6, 0.5], [9, 1], [20, 2]]},
         "line-opacity": 1,
         "line-dasharray": [2, 4],
