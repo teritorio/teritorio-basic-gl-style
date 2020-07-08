@@ -732,6 +732,7 @@
           "steps",
           "pedestrian",
           "footway",
+          "path",
           "platform",
           "cycleway"
         ]
@@ -764,6 +765,25 @@
       }
     },
     {
+      "id": "tunnel-path-path",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "footway"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(200, 169, 95, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]}
+      }
+    },
+    {
       "id": "tunnel-path-footway",
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
@@ -776,13 +796,10 @@
         ["==", "class", "path"],
         ["==", "subclass", "footway"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
+        "line-color": "rgba(217, 150, 154, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]}
       }
     },
     {
@@ -1205,7 +1222,7 @@
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps"]
+        ["!in", "subclass", "steps", "footway", "path"]
       ],
       "layout": {
         "line-cap": "round",
@@ -1441,6 +1458,7 @@
           "steps",
           "pedestrian",
           "footway",
+          "path",
           "platform",
           "cycleway"
         ]
@@ -1449,6 +1467,26 @@
         "line-color": "#cba",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
+      }
+    },
+    {
+      "id": "highway-path-path",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["!in", "brunnel", "bridge", "tunnel"],
+        ["==", "class", "path"],
+        ["==", "subclass", "path"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(200, 169, 95, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]},
+        "line-dasharray": [3, 2]
       }
     },
     {
@@ -1464,13 +1502,11 @@
         ["==", "class", "path"],
         ["==", "subclass", "footway"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
+        "line-color": "rgba(217, 150, 154, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]},
+        "line-dasharray": [3, 2]
       }
     },
     {
@@ -2045,6 +2081,7 @@
           "steps",
           "pedestrian",
           "footway",
+          "path",
           "platform",
           "cycleway"
         ]
@@ -2053,6 +2090,26 @@
         "line-color": "#cba",
         "line-dasharray": [1.5, 0.75],
         "line-width": {"base": 1.2, "stops": [[15, 1.2], [20, 4]]}
+      }
+    },
+    {
+      "id": "bridge-path-path",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849345966.4436"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "brunnel", "bridge"],
+        ["==", "class", "path"],
+        ["==", "subclass", "path"]
+      ],
+      "layout": {"line-cap": "butt", "line-join": "round"},
+      "paint": {
+        "line-color": "rgba(200, 169, 95, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]},
+        "line-dasharray": [3, 2]
       }
     },
     {
@@ -2070,11 +2127,9 @@
       ],
       "layout": {"line-cap": "butt", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(227, 227, 227, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [[13.5, 0], [14, 1.25], [20, 5.75]]
-        }
+        "line-color": "rgba(217, 150, 154, 1)",
+        "line-width": {"base": 1.2, "stops": [[13.5, 0], [14, 0.75], [20, 3]]},
+        "line-dasharray": [3, 2]
       }
     },
     {
