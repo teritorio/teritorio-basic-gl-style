@@ -1223,7 +1223,7 @@
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
         ["==", "class", "path"],
-        ["!in", "subclass", "steps", "footway", "path"]
+        ["!in", "subclass", "steps", "footway", "path", "cycleway"]
       ],
       "layout": {
         "line-cap": "round",
