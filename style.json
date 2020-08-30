@@ -40,6 +40,41 @@
       "paint": {"background-color": "#f8f4f0"}
     },
     {
+      "id": "landcover-sand",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849382550.77"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", "class", "sand"],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-pattern": "beach"}
+    },
+    {
+      "id": "water-offset",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849382550.77"},
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "maxzoom": 8,
+      "filter": ["all", ["==", "$type", "Polygon"], ["==", "class", "ocean"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#6ea5cb",
+        "fill-opacity": 1,
+        "fill-translate": {"base": 1, "stops": [[6, [2, 0]], [8, [0, 0]]]}
+      }
+    },
+    {
+      "id": "water-ocean",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849382550.77"},
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": ["==", "class", "ocean"],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#94c1e1"}
+    },
+    {
       "id": "landcover-glacier",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
@@ -65,21 +100,30 @@
       }
     },
     {
-      "id": "landcover-wetland",
+      "id": "landcover-wetland-fill",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849388993.3071"},
       "source": "openmaptiles",
       "source-layer": "landcover",
       "filter": ["all", ["==", "class", "wetland"]],
       "paint": {
-        "fill-pattern": {
-          "stops": [
-            [11, "wetland8"],
-            [12, "wetland16"],
-            [13, "wetland32"],
-            [14, "wetland64"]
-          ]
-        }
+        "fill-color": {
+          "stops": [[8, "#94c1e1"], [10, "rgba(211, 220, 237, 1)"]]
+        },
+        "fill-opacity": {"stops": [[9, 0], [11, 0.5]]}
+      }
+    },
+    {
+      "id": "landcover-wetland-pattern",
+      "type": "fill",
+      "metadata": {"mapbox:group": "1444849388993.3071"},
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 11,
+      "filter": ["all", ["==", "class", "wetland"]],
+      "paint": {
+        "fill-pattern": "wetland64",
+        "fill-opacity": {"stops": [[11, 0], [13, 1]]}
       }
     },
     {
@@ -106,16 +150,6 @@
         "fill-opacity": 0.2,
         "fill-outline-color": "hsla(0, 0%, 0%, 0.03)"
       }
-    },
-    {
-      "id": "landcover-sand",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849382550.77"},
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["==", "class", "sand"],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-pattern": "beach"}
     },
     {
       "id": "landcover-vineyard-low",
@@ -401,27 +435,17 @@
       }
     },
     {
-      "id": "water-offset",
-      "type": "fill",
-      "metadata": {"mapbox:group": "1444849382550.77"},
-      "source": "openmaptiles",
-      "source-layer": "water",
-      "maxzoom": 8,
-      "filter": ["==", "$type", "Polygon"],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "fill-color": "#6ea5cb",
-        "fill-opacity": 1,
-        "fill-translate": {"base": 1, "stops": [[6, [2, 0]], [8, [0, 0]]]}
-      }
-    },
-    {
       "id": "water",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849382550.77"},
       "source": "openmaptiles",
       "source-layer": "water",
-      "filter": ["all", ["!=", "intermittent", 1], ["!=", "brunnel", "tunnel"]],
+      "filter": [
+        "all",
+        ["!=", "intermittent", 1],
+        ["!=", "brunnel", "tunnel"],
+        ["!=", "class", "ocean"]
+      ],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#94c1e1"}
     },
