@@ -2818,7 +2818,7 @@
       "id": "poi-level-3-picto",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 15,
       "filter": [
         "all",
@@ -2877,7 +2877,7 @@
       "id": "poi-level-2-picto",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 14,
       "filter": [
         "all",
@@ -2936,7 +2936,7 @@
       "id": "poi-level-1-picto",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 12,
       "filter": [
         "all",
@@ -3386,7 +3386,7 @@
       "id": "poi-level-3",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 15,
       "filter": [
         "all",
@@ -3481,7 +3481,7 @@
       "id": "poi-level-2",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 14,
       "filter": [
         "all",
@@ -3576,7 +3576,7 @@
       "id": "poi-level-1",
       "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "poi",
+      "source-layer": "poi_tourism",
       "minzoom": 12,
       "filter": [
         "all",
