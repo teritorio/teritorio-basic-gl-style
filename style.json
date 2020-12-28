@@ -3219,7 +3219,7 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "park",
-      "minzoom": 6,
+      "minzoom": 8,
       "maxzoom": 14,
       "filter": [
         "all",
