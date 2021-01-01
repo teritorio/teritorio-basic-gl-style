@@ -2449,12 +2449,12 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": ["==", "subclass", "cable_car"],
+      "filter": ["all", ["==", "class", "aerialway"]],
       "layout": {"line-cap": "round", "visibility": "visible"},
       "paint": {
         "line-color": "hsl(0, 0%, 70%)",
-        "line-width": {"base": 1, "stops": [[11, 1], [19, 2.5]]}
+        "line-width": {"base": 1, "stops": [[0, 1], [11, 1], [19, 2.5]]},
+        "line-opacity": {"stops": [[10, 0], [11, 1]]}
       }
     },
     {
@@ -2462,13 +2462,13 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": ["==", "subclass", "cable_car"],
-      "layout": {"line-cap": "round", "visibility": "visible"},
+      "filter": ["all", ["==", "class", "aerialway"]],
+      "layout": {"line-cap": "butt", "visibility": "visible"},
       "paint": {
         "line-color": "hsl(0, 0%, 70%)",
-        "line-dasharray": [2, 3],
-        "line-width": {"base": 1, "stops": [[11, 3], [19, 5.5]]}
+        "line-dasharray": [0.1, 3],
+        "line-width": {"base": 1, "stops": [[10, 4], [17, 12]]},
+        "line-opacity": {"stops": [[10, 0], [11, 1]]}
       }
     },
     {
