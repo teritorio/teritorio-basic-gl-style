@@ -2888,6 +2888,7 @@
       "paint": {
         "text-color": "#765",
         "text-halo-blur": 0.5,
+        "text-halo-color": "#fff",
         "text-halo-width": 1
       }
     },
@@ -2906,9 +2907,7 @@
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
       "paint": {
-        "text-color": "#765",
-        "text-halo-blur": 0.5,
-        "text-halo-width": 1
+        "text-color": "#765"
       }
     },
     {
