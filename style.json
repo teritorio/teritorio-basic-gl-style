@@ -2908,9 +2908,7 @@
         "text-rotation-alignment": "map",
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
-      "paint": {
-        "text-color": "#765"
-      }
+      "paint": {"text-color": "#765"}
     },
     {
       "id": "highway-shield",
