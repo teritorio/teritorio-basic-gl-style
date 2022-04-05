@@ -3168,9 +3168,13 @@
       "source-layer": "mountain_peak",
       "minzoom": 9,
       "filter": [
-        "<=",
-        ["get", "rank"],
-        ["interpolate", ["linear"], ["zoom"], 7, 1, 14, 1, 15, 999]
+        "all",
+        ["==", ["geometry-type"], "Point"],
+        [
+          "<=",
+          ["get", "rank"],
+          ["interpolate", ["linear"], ["zoom"], 7, 1, 14, 1, 15, 999]
+        ]
       ],
       "layout": {
         "icon-image": "peak",
