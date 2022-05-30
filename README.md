@@ -1,5 +1,4 @@
 # Teritorio Basic Style
-[![Build Status](https://travis-ci.org/teritorio/teritorio-basic-gl-style.svg?branch=master)](https://travis-ci.org/teritorio/teritorio-basic-gl-style)
 
 Derived from [OSM Bright](https://github.com/openmaptiles/osm-bright-gl-style)
 
