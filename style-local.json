@@ -1270,31 +1270,6 @@
       }
     },
     {
-      "id": "housenumber",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "housenumber",
-      "minzoom": 17,
-      "filter": [
-        "==",
-        "$type",
-        "Point"
-      ],
-      "layout": {
-        "text-field": [
-          "get",
-          "housenumber"
-        ],
-        "text-font": [
-          "Noto Sans Regular"
-        ],
-        "text-size": 10
-      },
-      "paint": {
-        "text-color": "rgba(160, 160, 160, 1)"
-      }
-    },
-    {
       "id": "tunnel-service-track-casing",
       "type": "line",
       "metadata": {
@@ -6587,6 +6562,55 @@
             ]
           ]
         }
+      }
+    },
+    {
+      "id": "housenumber",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "housenumber",
+      "minzoom": 17,
+      "filter": [
+        "==",
+        "$type",
+        "Point"
+      ],
+      "layout": {
+        "text-field": [
+          "get",
+          "housenumber"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-allow-overlap": {
+          "stops": [
+            [
+              1,
+              false
+            ],
+            [
+              18,
+              true
+            ]
+          ]
+        },
+        "text-ignore-placement": false,
+        "text-size": {
+          "stops": [
+            [
+              17,
+              8
+            ],
+            [
+              19,
+              10
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "rgba(160, 160, 160, 1)"
       }
     },
     {
