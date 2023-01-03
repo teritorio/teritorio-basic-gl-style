@@ -2558,7 +2558,7 @@
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
       "source": "openmaptiles",
-      "source-layer": "route",
+      "source-layer": "route_bicycle_hiking",
       "filter": ["all", ["in", "bicycle_network", 1, 2]],
       "layout": {"line-join": "round", "line-cap": "round"},
       "paint": {
@@ -2574,7 +2574,7 @@
       "type": "line",
       "metadata": {"mapbox:group": "1444849345966.4436"},
       "source": "openmaptiles",
-      "source-layer": "route",
+      "source-layer": "route_bicycle_hiking",
       "filter": ["all", ["in", "hiking_network", 1, 2]],
       "layout": {
         "line-cap": "round",
