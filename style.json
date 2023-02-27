@@ -525,6 +525,46 @@
       }
     },
     {
+      "id": "military-fill",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["all", ["in", "class", "military"]],
+      "paint": {
+        "fill-color": "rgba(219, 94, 94, 1)",
+        "fill-opacity": {"stops": [[10, 0], [11, 0.15], [14, 0.1]]}
+      }
+    },
+    {
+      "id": "military-outer",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "minzoom": 7,
+      "filter": ["all", ["in", "class", "military"]],
+      "layout": {"line-join": "bevel"},
+      "paint": {
+        "line-color": "rgba(219, 94, 94, 1)",
+        "line-width": {"stops": [[12, 3], [18, 6]]},
+        "line-offset": 0,
+        "line-opacity": {"stops": [[12, 0], [12.55, 0.25]]}
+      }
+    },
+    {
+      "id": "military-inner",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "minzoom": 7,
+      "filter": ["all", ["in", "class", "military"]],
+      "paint": {
+        "line-color": "rgba(219, 94, 94, 1)",
+        "line-width": {"stops": [[12, 3], [18, 6]]},
+        "line-offset": {"stops": [[12, 3], [18, 6]]},
+        "line-opacity": {"stops": [[12.5, 0], [13, 0.175]]}
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849364238.8171"},
