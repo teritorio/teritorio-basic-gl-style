@@ -8051,6 +8051,50 @@
       }
     },
     {
+      "id": "place-neighbourhood",
+      "type": "symbol",
+      "metadata": {
+        "mapbox:group": "1444849242106.713"
+      },
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "neighbourhood"
+        ]
+      ],
+      "layout": {
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-max-width": 8,
+        "text-size": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              6
+            ],
+            [
+              15,
+              12
+            ]
+          ]
+        },
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333",
+        "text-halo-color": "rgba(255,255,255,0.8)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
       "id": "place-hamlet",
       "type": "symbol",
       "metadata": {
@@ -8059,11 +8103,13 @@
       "source": "openmaptiles",
       "source-layer": "place",
       "filter": [
-        "in",
-        "class",
-        "hamlet",
-        "suburb",
-        "neighbourhood"
+        "all",
+        [
+          "in",
+          "class",
+          "hamlet",
+          "suburb"
+        ]
       ],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
