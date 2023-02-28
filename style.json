@@ -565,11 +565,30 @@
       }
     },
     {
+      "id": "building-line",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849364238.8171"},
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "filter": ["==", "$type", "LineString"],
+      "paint": {
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [15.5, "rgba(205, 197, 188, 1)"],
+            [16, "rgba(198, 189, 186, 1)"]
+          ]
+        },
+        "line-width": {"stops": [[14, 2], [18, 6]]}
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "metadata": {"mapbox:group": "1444849364238.8171"},
       "source": "openmaptiles",
       "source-layer": "building",
+      "filter": ["==", "$type", "Polygon"],
       "paint": {
         "fill-antialias": true,
         "fill-color": {"base": 1, "stops": [[15.5, "#f2eae2"], [16, "#dfdbd7"]]}
@@ -581,6 +600,7 @@
       "metadata": {"mapbox:group": "1444849364238.8171"},
       "source": "openmaptiles",
       "source-layer": "building",
+      "filter": ["==", "$type", "Polygon"],
       "layout": {"visibility": "visible"},
       "paint": {
         "fill-color": "#f2eae2",
