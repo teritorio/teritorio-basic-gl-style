@@ -1437,7 +1437,7 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["!=", "brunnel", "tunnel"],
+        ["!in", "brunnel", "bridge", "tunnel"],
         ["in", "class", "minor", "service"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
@@ -1794,7 +1794,7 @@
       "filter": [
         "all",
         ["==", "$type", "LineString"],
-        ["!=", "brunnel", "tunnel"],
+        ["!in", "brunnel", "bridge", "tunnel"],
         ["in", "class", "minor", "service"]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
