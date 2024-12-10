@@ -477,11 +477,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "park",
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["in", "class", "national_park", "protected_area"]
-      ],
+      "filter": ["all", ["==", "$type", "Polygon"]],
       "paint": {
         "fill-color": "rgba(125, 184, 127, 1)",
         "fill-opacity": {"stops": [[6, 0], [7, 0.3], [9, 0]]}
@@ -493,11 +489,7 @@
       "source": "openmaptiles",
       "source-layer": "park",
       "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["in", "class", "national_park", "protected_area"]
-      ],
+      "filter": ["all", ["==", "$type", "Polygon"]],
       "layout": {"line-join": "bevel"},
       "paint": {
         "line-color": "rgba(125, 184, 127, 1)",
@@ -512,11 +504,7 @@
       "source": "openmaptiles",
       "source-layer": "park",
       "minzoom": 7,
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["in", "class", "national_park", "protected_area"]
-      ],
+      "filter": ["all", ["==", "$type", "Polygon"]],
       "paint": {
         "line-color": "rgba(125, 184, 127,1)",
         "line-width": {"stops": [[7, 3], [13, 6]]},
@@ -3368,7 +3356,7 @@
       "filter": [
         "all",
         ["==", "$type", "Point"],
-        ["==", "class", "protected_area"],
+        ["in", "class", "protected_area", "nature_reserve"],
         [">", "rank", 1]
       ],
       "layout": {
@@ -3393,7 +3381,7 @@
       "filter": [
         "all",
         ["==", "$type", "Point"],
-        ["==", "class", "protected_area"],
+        ["in", "class", "protected_area", "nature_reserve"],
         ["<=", "rank", 1]
       ],
       "layout": {
